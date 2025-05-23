@@ -1,10 +1,10 @@
 // API URL
-const API_URL = 'https://jsonplaceholder.typicode.com/posts';
+const API_URL = 'https://jsonplaceholder.typicode.com';
 
 // Function to fetch all posts
 async function fetchPosts() {
     try {
-        const response = await fetch(API_URL);
+        const response = await fetch(`${API_URL}/posts`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -28,7 +28,7 @@ async function fetchPost(id) {
             throw new Error('Post ID is required');
         }
         
-        const response = await fetch(`${API_URL}/${id}`);
+        const response = await fetch(`${API_URL}/posts/${id}`);
         if (!response.ok) {
             if (response.status === 404) {
                 console.error('Post not found');
@@ -48,7 +48,7 @@ async function fetchPost(id) {
 // Function to create a new post
 async function createPost(postData) {
     try {
-        const response = await fetch(API_URL, {
+        const response = await fetch(`${API_URL}/posts`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -65,6 +65,7 @@ async function createPost(postData) {
         return null;
     }
 }
+
 
 // Export the API functions
 export {

@@ -73,7 +73,6 @@ async function fetchAndDisplayPost(postId) {
     
     // If not in store, try to fetch from API
     if (!post) {
-        console.log('Post not found in store, fetching from API...');
         post = await fetchPost(postId);
         console.log('Post from API:', post);
         

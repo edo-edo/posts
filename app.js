@@ -24,7 +24,7 @@ function renderPostDetail(post) {
         postDetail.innerHTML = `
             <a href="index.html" class="back-button">← Back to Posts</a>
             <h1>Post Not Found</h1>
-            <p>Sorry, the post you're looking for doesn't exist.</p>
+            <p>Sorry, the post you're looking for doesn't exist, try again</p>
         `;
         return;
     }
